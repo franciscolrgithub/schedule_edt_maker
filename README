@@ -1,0 +1,30 @@
+SCHEDULE EDT MAKER
+
+This project aims to create and store schedules so as to organize your day.
+The built binary generates plain text ``.schl`` files for which each line
+represents a task to be done. Each task has a start time, an end time and a
+name.
+
+####Usage#####
+
+There are three commands available: start, append and backup
+
+start:
+creates a new "today.schl" file and writes a task into it
+./edt_maker start <hour_begin> <min_begin> <hour_end> <min_end> <name>
+
+append:
+appends a new line (a new task) to the "today.schl" file
+./edt_maker append <hour_begin> <min_begin> <hour_end> <min_end> <name>
+
+backup:
+copies the "today.schl" file into a new "backup.schl" file. It is not just
+a copy of the original file, it reads the original file to make a task_list
+and adds writes all the tasks into the new file
+./edt_maker backup
+
+####Structures####
+
+The structures used in this project are the following:
+- edt_task: represents a task, has a start time, an end time and a name
+- edt_task_list: a linked list of tasks with a task and a next field
